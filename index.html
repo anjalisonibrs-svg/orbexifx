@@ -9,6 +9,24 @@
   <style>
     /* small custom styles */
     .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+    /* subtle fixed warning at page edge */
+    .site-warning {
+      position: fixed;
+      right: 12px;
+      bottom: 8px;
+      font-size: 12px;
+      color: #9ca3af;       /* gray-400 */
+      opacity: 0.62;
+      pointer-events: none; /* non-interactive so it doesn't steal clicks */
+      user-select: none;
+      z-index: 9999;
+      background: transparent;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    @media (max-width: 640px) {
+      .site-warning { display: none; } /* hide on small screens */
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
@@ -21,6 +39,7 @@
           <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
         </div>
       </a>
+
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
         <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
@@ -29,9 +48,12 @@
         <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
         <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
       </nav>
+
       <div class="md:hidden">
         <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+               stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
       </div>
     </div>
@@ -41,14 +63,21 @@
     <section class="pt-20 pb-16">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 class="text-5xl md:text-6xl font-extrabold leading-snug tracking-tight">Real-time <span class="text-indigo-400">Forex Signals</span> & Expert Market Research</h1>
-          <p class="mt-5 text-gray-300 max-w-xl text-lg">Market-proven setups, actionable signals, and clear analysis to help traders make informed, disciplined decisions. Free and premium plans available.</p>
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-snug tracking-tight">
+            Real-time <span class="text-indigo-400">Forex Signals</span> & Expert Market Research
+          </h1>
+          <p class="mt-5 text-gray-300 max-w-xl text-lg">
+            Market-proven setups, actionable signals, and clear analysis to help traders make informed, disciplined decisions. Free and premium plans available.
+          </p>
           <div class="mt-8 flex gap-4">
             <a href="#signup" class="px-6 py-3 rounded-xl bg-indigo-600 font-bold text-lg hover:bg-indigo-500 transition shadow-2xl shadow-indigo-900/50">Start Free Account</a>
             <a href="#features" class="px-6 py-3 rounded-xl bg-gray-800 border border-gray-700 font-medium hover:bg-gray-700 transition">Explore Features</a>
           </div>
-          <div class="mt-8 text-sm text-gray-400 border-l-4 border-indigo-600 pl-4 py-1">Trusted by traders worldwide • Weekly comprehensive market reports • 24/7 dedicated community support</div>
+          <div class="mt-8 text-sm text-gray-400 border-l-4 border-indigo-600 pl-4 py-1">
+            Trusted by traders worldwide • Weekly market reports • 24/7 community support
+          </div>
         </div>
+
         <div class="relative">
           <div class="rounded-3xl overflow-hidden shadow-2xl glass border border-gray-700/50 transform hover:scale-[1.01] transition-transform duration-300">
             <img src="gifmobile.gif" alt="Live Signal Example" class="w-full h-auto"/>
@@ -57,10 +86,11 @@
                 <div>
                   <div class="text-sm text-indigo-400 font-semibold">Live Trade Signal</div>
                   <div class="font-bold text-2xl mt-1">EUR/USD: BUY @ 1.0982</div>
+                  <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
                 </div>
                 <div class="text-right">
-                  <div class="text-md font-medium text-gray-300">Target (TP): 1.1020</div>
-                  <div class="text-md font-medium text-gray-300">Stop Loss (SL): 1.0940</div>
+                  <div class="text-md font-medium text-green-400">Target (TP): 1.1108</div>
+                  <div class="text-md font-medium text-red-400">Stop Loss (SL): 1.0940</div>
                 </div>
               </div>
               <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Updated: 12 minutes ago</div>
@@ -94,13 +124,13 @@
     <section id="about" class="py-16 border-t border-gray-800">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold">About Orbexifx: Discipline, Clarity, Risk Control</h2>
-        
-          <p class="mt-4 text-lg text-gray-300 leading-relaxed">Orbexifx is a dedicated market research platform and trading community. Our mission is to convert complex financial data into **plain, reliable guidance** for forex and major financial markets. We equip traders with the information, discipline, and strong risk control principles needed to navigate the markets effectively.</p>
-          <p class="mt-4 text-gray-300 leading-relaxed">Our methodology is centered on **robust technical analysis**, a multi-timeframe perspective, and strict risk-management protocols. We cater to all skill levels, providing straightforward guides for beginners and advanced, evidence-based strategies for seasoned traders.</p>
-          <p class="mt-6 text-sm text-yellow-400 p-4 border-l-4 border-yellow-500 bg-gray-800/50 rounded-lg">
-            **Disclaimer:** We are not financial advisors. Our content and signals are for educational and informational purposes only and do not constitute financial advice. Trading involves substantial risk of capital loss. Always conduct your own due diligence, assess your financial situation, and seek advice from a licensed professional if required.
-          </p>
-        
+        <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+          Orbexifx converts complex financial data into plain, reliable guidance for forex and major financial markets. We equip traders with information and strong risk-control principles needed to navigate markets effectively.
+        </p>
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          Our methodology is centered on robust technical analysis, multi-timeframe perspective, and strict risk-management protocols. We cater to all skill levels.
+        </p>
+        <!-- Prominent disclaimers removed from here — single subtle edge-warning remains -->
       </div>
     </section>
 
@@ -110,15 +140,17 @@
           <h2 class="text-3xl font-bold">Latest Premium Signals</h2>
           <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">View All Signals &rarr;</a>
         </div>
+
         <div class="mt-8 grid md:grid-cols-3 gap-8">
           <article class="p-6 bg-gray-800 rounded-xl border border-indigo-700/50 shadow-lg">
             <div class="flex items-center justify-between">
               <div>
                 <div class="text-md text-gray-400 font-medium">GBP/JPY</div>
                 <div class="font-bold text-2xl text-red-400 mt-1">SELL @ 157.12</div>
+                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 156.00</div>
+                <div class="text-sm text-gray-300">TP: 152.98</div>
                 <div class="text-sm text-gray-300">SL: 158.50</div>
               </div>
             </div>
@@ -130,9 +162,10 @@
               <div>
                 <div class="text-md text-gray-400 font-medium">USD/CAD</div>
                 <div class="font-bold text-2xl text-green-400 mt-1">BUY @ 1.3610</div>
+                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 1.3750</div>
+                <div class="text-sm text-gray-300">TP: 1.3940</div>
                 <div class="text-sm text-gray-300">SL: 1.3500</div>
               </div>
             </div>
@@ -144,9 +177,10 @@
               <div>
                 <div class="text-md text-gray-400 font-medium">AUD/USD</div>
                 <div class="font-bold text-2xl text-green-400 mt-1">BUY @ 0.6525</div>
+                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
               </div>
               <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 0.6600</div>
+                <div class="text-sm text-gray-300">TP: 0.6660</div>
                 <div class="text-sm text-gray-300">SL: 0.6480</div>
               </div>
             </div>
@@ -162,6 +196,7 @@
           <h2 class="text-3xl font-bold">Latest Market Analysis & Education</h2>
           <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">Read All Articles &rarr;</a>
         </div>
+
         <div class="mt-8 grid md:grid-cols-3 gap-8">
           <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition">
             <img src="support.png" alt="Understanding Support & Resistance" class="w-full h-auto object-cover"/>
@@ -197,7 +232,7 @@
       <div class="max-w-4xl mx-auto px-6 bg-gray-800 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl">
         <h2 class="text-3xl font-bold text-center">Ready to Trade Smarter?</h2>
         <p class="text-gray-400 mt-3 text-center text-lg">Sign up now for access to free signals and market analysis. No credit card required.</p>
-        
+
         <form id="signup" class="mt-8 grid md:grid-cols-2 gap-6" onsubmit="handleSignup(event)">
           <input required type="text" name="name" placeholder="Your Full Name" class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition" />
           <input required type="email" name="email" placeholder="Your Best Email Address" class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition" />
@@ -214,15 +249,12 @@
             <p class="text-md text-gray-300">Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-300 hover:text-white">@orbexifx</a></p>
           </div>
 
-          <div class="p-4 bg-yellow-900/40 rounded-lg border border-yellow-700/50">
-            <p class="text-sm text-yellow-100 font-medium">
-              **Important Note:** This website is for informational and educational purposes only. Our content and signals are NOT financial advice. Trading involves significant risk, and you could lose money. Always conduct your own thorough research (due diligence) before making any trading decisions.
-            </p>
+          <div class="p-4 bg-gray-700/30 rounded-lg border border-gray-700/50">
+            <p class="text-sm text-gray-300">Community & support available through Telegram.</p>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="border-t border-gray-800 mt-12 py-10 bg-gray-900">
@@ -241,12 +273,27 @@
     </div>
   </footer>
 
+  <!-- Subtle edge warning (single place, not highlighted) -->
+  <div class="site-warning">
+    Warning: Signals are educational only — not financial advice. Trading involves risk.
+  </div>
+
   <script>
     // small interactivity
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menuBtn').addEventListener('click', ()=> alert('Mobile menu: you can implement a slide-over here.'));
+    document.getElementById('menuBtn').addEventListener('click', ()=> {
+      // simple mobile hint — replace with real slide-over if you want
+      alert('Open menu: implement slide-over or off-canvas here.');
+    });
 
     function handleSignup(e){
       e.preventDefault();
       const f = new FormData(e.target);
-      const name
+      const name = f.get('name') || '';
+      const email = f.get('email') || '';
+      document.getElementById('msg').textContent = `Thanks ${name.trim() ? name + ',' : ''} check ${email} for next steps.`;
+      // NOTE: add real form handling (API call / mailing list) here when ready.
+    }
+  </script>
+</body>
+</html>
