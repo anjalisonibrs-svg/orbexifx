@@ -35,11 +35,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Single-line warning (one place only) -->
-    <div class="w-full bg-yellow-500 text-black text-center text-sm py-2">
-      Warning: Signals are educational only — not financial advice. Trading involves risk.
-    </div>
+    <!-- warning removed from header (now placed subtly at page edge) -->
   </header>
 
   <main>
@@ -102,7 +98,6 @@
         <h2 class="text-3xl font-bold">About Orbexifx: Discipline, Clarity, Risk Control</h2>
           <p class="mt-4 text-lg text-gray-300 leading-relaxed">Orbexifx converts complex financial data into plain, reliable guidance for forex and major financial markets. We equip traders with information and strong risk-control principles needed to navigate markets effectively.</p>
           <p class="mt-4 text-gray-300 leading-relaxed">Our methodology is centered on robust technical analysis, multi-timeframe perspective, and strict risk-management protocols. We cater to all skill levels.</p>
-          <!-- Long disclaimer removed - single-line warning is shown in header -->
       </div>
     </section>
 
@@ -219,10 +214,9 @@
             <p class="text-md text-gray-300">Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-300 hover:text-white">@orbexifx</a></p>
           </div>
 
-          <!-- Removed duplicate important-note box; single-line warning is above header -->
           <div class="p-4 bg-gray-700/30 rounded-lg border border-gray-700/50">
             <p class="text-sm text-gray-300">
-              Signals and content are for education only.
+              Community & support available through Telegram.
             </p>
           </div>
         </div>
@@ -246,6 +240,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Subtle hidden warning placed at page edge (only one place) -->
+  <div class="fixed bottom-2 right-2 text-xs text-gray-500 opacity-70 pointer-events-none select-none">
+    Warning: Signals are educational only — not financial advice. Trading involves risk.
+  </div>
 
   <script>
     // small interactivity
