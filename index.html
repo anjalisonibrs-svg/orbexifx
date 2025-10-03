@@ -1,299 +1,160 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbexifx — Trade Smarter</title>
-  <meta name="description" content="Orbexifx - Market research, trading signals, and forex analysis." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>छोटी वेबसाइट — नमूना</title>
   <style>
-    /* small custom styles */
-    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
-    /* subtle fixed warning at page edge */
-    .site-warning {
-      position: fixed;
-      right: 12px;
-      bottom: 8px;
-      font-size: 12px;
-      color: #9ca3af;       /* gray-400 */
-      opacity: 0.62;
-      pointer-events: none; /* non-interactive so it doesn't steal clicks */
-      user-select: none;
-      z-index: 9999;
-      background: transparent;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-    @media (max-width: 640px) {
-      .site-warning { display: none; } /* hide on small screens */
+    :root{--bg:#f7fafc;--card:#ffffff;--text:#0f172a;--accent:#2563eb}
+    [data-theme="dark"]{--bg:#0b1220;--card:#071029;--text:#e6eef8;--accent:#60a5fa}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans','Helvetica Neue',Arial; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
+    .container{max-width:980px;margin:32px auto;padding:0 20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:14px;text-decoration:none;color:var(--text);font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center;margin-bottom:28px}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    h1{margin:0 0 10px;font-size:28px}
+    p.lead{margin:0 0 16px;color:rgba(15,23,42,0.8)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+
+    .features{display:flex;gap:12px;margin-top:12px}
+    .feature{flex:1;padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.025),transparent);border:1px solid rgba(0,0,0,0.04)}
+    .feature h3{margin:0 0 8px;font-size:16px}
+
+    .contact-row{display:flex;gap:12px;margin-top:12px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);background:transparent;color:var(--text)}
+    .small{font-size:13px;color:rgba(15,23,42,0.6)}
+
+    footer{margin-top:28px;text-align:center;color:rgba(15,23,42,0.6);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr;}
+      nav a{display:none}
+      .contact-row{flex-direction:column}
     }
   </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
-  <header class="sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain">
+<body data-theme="light">
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SW</div>
         <div>
-          <div class="font-bold text-xl">Orbexifx</div>
-          <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
+          <div style="font-weight:700">छोटी वेबसाइट</div>
+          <div style="font-size:12px;color:rgba(15,23,42,0.6)">सादगी · तेज़ · उत्तरदायी</div>
         </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
-        <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
-        <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition">Analysis</a>
-        <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
-        <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
-        <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
+      </div>
+      <nav>
+        <a href="#features">खासियतें</a>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#contact" class="btn">संपर्क करें</a>
+        <button id="themeToggle" style="margin-left:12px;padding:8px 10px;border-radius:8px;border:0;background:transparent;cursor:pointer">🌓</button>
       </nav>
+    </header>
 
-      <div class="md:hidden">
-        <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-               stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
-    </div>
-  </header>
+    <section class="hero">
+      <div class="card">
+        <h1>एक छोटी, तेज़ और सुंदर वेबसाइट</h1>
+        <p class="lead">यह एक सिंगल-फाइल HTML टेम्पलेट है—रिस्पॉन्सिव लेआउट, संपर्क फ़ॉर्म (फ्रंटएंड), और डार्क मोड टॉगल के साथ। कॉपी करें, कस्टमाइज़ करें और उपयोग में लाएँ।</p>
+        <a class="btn" href="#contact">फ़ॉर्म भरें</a>
 
-  <main>
-    <section class="pt-20 pb-16">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-5xl md:text-6xl font-extrabold leading-snug tracking-tight">
-            Real-time <span class="text-indigo-400">Forex Signals</span> & Expert Market Research
-          </h1>
-          <p class="mt-5 text-gray-300 max-w-xl text-lg">
-            Market-proven setups, actionable signals, and clear analysis to help traders make informed, disciplined decisions. Free and premium plans available.
-          </p>
-          <div class="mt-8 flex gap-4">
-            <a href="#signup" class="px-6 py-3 rounded-xl bg-indigo-600 font-bold text-lg hover:bg-indigo-500 transition shadow-2xl shadow-indigo-900/50">Start Free Account</a>
-            <a href="#features" class="px-6 py-3 rounded-xl bg-gray-800 border border-gray-700 font-medium hover:bg-gray-700 transition">Explore Features</a>
+        <div class="features" style="margin-top:18px">
+          <div class="feature">
+            <h3>रिस्पॉन्सिव</h3>
+            <div class="small">मोबाइल और डेस्कटॉप पर अच्छी तरह दिखता है।</div>
           </div>
-          <div class="mt-8 text-sm text-gray-400 border-l-4 border-indigo-600 pl-4 py-1">
-            Trusted by traders worldwide • Weekly market reports • 24/7 community support
+          <div class="feature">
+            <h3>डार्क/लाइट</h3>
+            <div class="small">एक बटन से टॉगल करें।</div>
           </div>
-        </div>
-
-        <div class="relative">
-          <div class="rounded-3xl overflow-hidden shadow-2xl glass border border-gray-700/50 transform hover:scale-[1.01] transition-transform duration-300">
-            <img src="gifmobile.gif" alt="Live Signal Example" class="w-full h-auto"/>
-            <div class="p-6 bg-gray-800/70">
-              <div class="flex items-center justify-between">
-                <div>
-                  <div class="text-sm text-indigo-400 font-semibold">Live Trade Signal</div>
-                  <div class="font-bold text-2xl mt-1">EUR/USD: BUY @ 1.0982</div>
-                  <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
-                </div>
-                <div class="text-right">
-                  <div class="text-md font-medium text-green-400">Target (TP): 1.1108</div>
-                  <div class="text-md font-medium text-red-400">Stop Loss (SL): 1.0940</div>
-                </div>
-              </div>
-              <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Updated: 12 minutes ago</div>
-            </div>
+          <div class="feature">
+            <h3>आसान कस्टमाइज़ेशन</h3>
+            <div class="small">स्टाइल और टेक्स्ट आसानी से बदले जा सकते हैं।</div>
           </div>
         </div>
       </div>
+
+      <aside class="card">
+        <h3 id="about">हमारे बारे में</h3>
+        <p class="small">यह डेमो किसी छोटे प्रोजेक्ट, पोर्टफोलियो या साइड-प्रोजेक्ट के लिए उपयुक्त है। HTML/CSS एक फ़ाइल में है ताकि आप तुरंत ब्राउज़र में खोलकर देख सकें।</p>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid rgba(0,0,0,0.05)">
+        <div style="font-size:13px">जुनून: वेब डेवलपमेंट · डिजाइन · सीखना</div>
+      </aside>
     </section>
 
-    <section id="features" class="py-16 border-t border-gray-800 bg-gray-900">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center">Your Trading Edge</h2>
-        <p class="text-center text-gray-400 mt-3 mb-10">We provide the essential tools and insights for better decision-making.</p>
-        <div class="mt-6 grid md:grid-cols-3 gap-8">
-          <div class="p-8 bg-gray-800 rounded-2xl border border-indigo-700/50 shadow-xl hover:shadow-indigo-900/30 transition">
-            <h3 class="font-bold text-xl text-indigo-400">Actionable Live Signals</h3>
-            <p class="mt-3 text-gray-400">High-probability trade setups for forex and major markets, complete with clear entry, exit, and essential risk management parameters.</p>
-          </div>
-          <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
-            <h3 class="font-bold text-xl">In-Depth Daily Analysis</h3>
-            <p class="mt-3 text-gray-400">Professional market commentary, technical breakdowns, and fundamental insights for key currency pairs, delivered daily to your inbox.</p>
-          </div>
-          <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
-            <h3 class="font-bold text-xl">Vibrant Trader Community</h3>
-            <p class="mt-3 text-gray-400">Access our exclusive Telegram/Discord groups to discuss real-time trades, share strategies, and learn from experienced peers in a 24/7 environment.</p>
-          </div>
-        </div>
-      </div>
+    <section id="features" class="card" style="margin-bottom:18px">
+      <h2 style="margin-top:0">खासियतें</h2>
+      <ul>
+        <li>सिंगल HTML फ़ाइल — आसान होस्टिंग</li>
+        <li>क्लाइंट-साइड फ़ॉर्म सत्यापन और सेंड सिमुलेशन</li>
+        <li>क्लीन CSS — समझने में सरल</li>
+      </ul>
     </section>
 
-    <section id="about" class="py-16 border-t border-gray-800">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold">About Orbexifx: Discipline, Clarity, Risk Control</h2>
-        <p class="mt-4 text-lg text-gray-300 leading-relaxed">
-          Orbexifx converts complex financial data into plain, reliable guidance for forex and major financial markets. We equip traders with information and strong risk-control principles needed to navigate markets effectively.
-        </p>
-        <p class="mt-4 text-gray-300 leading-relaxed">
-          Our methodology is centered on robust technical analysis, multi-timeframe perspective, and strict risk-management protocols. We cater to all skill levels.
-        </p>
-        <!-- Prominent disclaimers removed from here — single subtle edge-warning remains -->
-      </div>
+    <section id="contact" class="card">
+      <h2 style="margin-top:0">हमसे संपर्क करें</h2>
+      <form id="contactForm">
+        <div class="contact-row">
+          <input type="text" id="name" placeholder="आपका नाम" required />
+          <input type="email" id="email" placeholder="ईमेल" required />
+        </div>
+        <div style="margin-top:12px">
+          <textarea id="message" rows="4" placeholder="संदेश लिखें..." required></textarea>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+          <button type="submit" class="btn">भेजें</button>
+          <div id="formStatus" class="small" aria-live="polite"></div>
+        </div>
+      </form>
     </section>
 
-    <section id="signals" class="py-16 border-t border-gray-800 bg-gray-900">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex items-center justify-between">
-          <h2 class="text-3xl font-bold">Latest Premium Signals</h2>
-          <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">View All Signals &rarr;</a>
-        </div>
-
-        <div class="mt-8 grid md:grid-cols-3 gap-8">
-          <article class="p-6 bg-gray-800 rounded-xl border border-indigo-700/50 shadow-lg">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="text-md text-gray-400 font-medium">GBP/JPY</div>
-                <div class="font-bold text-2xl text-red-400 mt-1">SELL @ 157.12</div>
-                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
-              </div>
-              <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 152.98</div>
-                <div class="text-sm text-gray-300">SL: 158.50</div>
-              </div>
-            </div>
-            <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Published: Sep 30, 2025</div>
-          </article>
-
-          <article class="p-6 bg-gray-800 rounded-xl border border-gray-700 shadow-lg">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="text-md text-gray-400 font-medium">USD/CAD</div>
-                <div class="font-bold text-2xl text-green-400 mt-1">BUY @ 1.3610</div>
-                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
-              </div>
-              <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 1.3940</div>
-                <div class="text-sm text-gray-300">SL: 1.3500</div>
-              </div>
-            </div>
-            <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Published: Sep 30, 2025</div>
-          </article>
-
-          <article class="p-6 bg-gray-800 rounded-xl border border-gray-700 shadow-lg">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="text-md text-gray-400 font-medium">AUD/USD</div>
-                <div class="font-bold text-2xl text-green-400 mt-1">BUY @ 0.6525</div>
-                <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
-              </div>
-              <div class="text-right">
-                <div class="text-sm text-gray-300">TP: 0.6660</div>
-                <div class="text-sm text-gray-300">SL: 0.6480</div>
-              </div>
-            </div>
-            <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Published: Sep 29, 2025</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog" class="py-16 border-t border-gray-800">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex items-center justify-between">
-          <h2 class="text-3xl font-bold">Latest Market Analysis & Education</h2>
-          <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">Read All Articles &rarr;</a>
-        </div>
-
-        <div class="mt-8 grid md:grid-cols-3 gap-8">
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition">
-            <img src="support.png" alt="Understanding Support & Resistance" class="w-full h-auto object-cover"/>
-            <div class="p-6">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Understanding Major Support & Resistance</h3>
-              <p class="mt-2 text-sm text-gray-400">A quick, practical guide to identifying key technical levels and how to trade them effectively.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 28, 2025 • 4 min read</div>
-            </div>
-          </article>
-
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition">
-            <img src="gt.png" alt="How to Build a Trading Plan" class="w-full h-auto object-cover"/>
-            <div class="p-6">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Blueprint: How to Build a Trading Plan</h3>
-              <p class="mt-2 text-sm text-gray-400">The essential guide for consistent trading, centering on robust risk management and strategy implementation.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 25, 2025 • 6 min read</div>
-            </div>
-          </article>
-
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition">
-            <img src="stt.jpg" alt="Top Indicators for Forex Traders" class="w-full h-auto object-cover"/>
-            <div class="p-6">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Top Indicators for Forex Traders</h3>
-              <p class="mt-2 text-sm text-gray-400">Discover the indicators that truly add value to your analysis — and learn how to use them with precision.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 22, 2025 • 5 min read</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-gray-900">
-      <div class="max-w-4xl mx-auto px-6 bg-gray-800 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl">
-        <h2 class="text-3xl font-bold text-center">Ready to Trade Smarter?</h2>
-        <p class="text-gray-400 mt-3 text-center text-lg">Sign up now for access to free signals and market analysis. No credit card required.</p>
-
-        <form id="signup" class="mt-8 grid md:grid-cols-2 gap-6" onsubmit="handleSignup(event)">
-          <input required type="text" name="name" placeholder="Your Full Name" class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition" />
-          <input required type="email" name="email" placeholder="Your Best Email Address" class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition" />
-          <input type="text" name="telegram" placeholder="Telegram Handle (optional for community access)" class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition md:col-span-2" />
-          <button type="submit" class="md:col-span-2 px-6 py-4 rounded-xl bg-indigo-600 font-bold text-lg hover:bg-indigo-500 transition shadow-lg shadow-indigo-900/50">Join Orbexifx Now</button>
-        </form>
-
-        <div id="msg" class="mt-6 text-center text-lg font-medium text-green-400"></div>
-
-        <div class="mt-10 grid md:grid-cols-2 gap-6 border-t border-gray-700 pt-6">
-          <div class="p-4 bg-gray-700/50 rounded-lg border border-gray-700">
-            <h3 class="font-bold text-xl text-indigo-400">Contact Us</h3>
-            <p class="text-md text-gray-300 mt-3">Email: <a href="mailto:info@orbexifx.xyz" class="text-indigo-300 hover:text-white">info@orbexifx.xyz</a></p>
-            <p class="text-md text-gray-300">Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-300 hover:text-white">@orbexifx</a></p>
-          </div>
-
-          <div class="p-4 bg-gray-700/30 rounded-lg border border-gray-700/50">
-            <p class="text-sm text-gray-300">Community & support available through Telegram.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-gray-800 mt-12 py-10 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <img src="250.png" alt="Orbexifx Logo" class="w-8 h-8 object-contain opacity-70">
-        <div>
-          <div class="font-bold text-lg">Orbexifx</div>
-          <div class="text-sm text-gray-500">© <span id="year"></span> Orbexifx. All rights reserved.</div>
-        </div>
-      </div>
-      <div class="text-sm text-gray-500 text-center md:text-right">
-        <p>Email: <a href="mailto:info@orbexifx.xyz" class="text-indigo-400 hover:text-white">info@orbexifx.xyz</a></p>
-        <p>Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-400 hover:text-white">@orbexifx</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Subtle edge warning (single place, not highlighted) -->
-  <div class="site-warning">
-    Warning: Signals are educational only — not financial advice. Trading involves risk.
+    <footer class="small">© 2025 छोटी वेबसाइट — सभी अधिकार सुरक्षित</footer>
   </div>
 
   <script>
-    // small interactivity
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menuBtn').addEventListener('click', ()=> {
-      // simple mobile hint — replace with real slide-over if you want
-      alert('Open menu: implement slide-over or off-canvas here.');
+    // Theme toggle
+    const btn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const body = document.body;
+
+    // Initialize from localStorage
+    const saved = localStorage.getItem('site-theme');
+    if(saved === 'dark') body.setAttribute('data-theme','dark');
+
+    btn.addEventListener('click', () => {
+      const cur = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', cur);
+      localStorage.setItem('site-theme', cur);
     });
 
-    function handleSignup(e){
+    // Simple client-side form handling (demo)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const f = new FormData(e.target);
-      const name = f.get('name') || '';
-      const email = f.get('email') || '';
-      document.getElementById('msg').textContent = `Thanks ${name.trim() ? name + ',' : ''} check ${email} for next steps.`;
-      // NOTE: add real form handling (API call / mailing list) here when ready.
-    }
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !email || !message){
+        status.textContent = 'कृपया सभी फ़ील्ड भरें।';
+        return;
+      }
+
+      status.textContent = 'भेजा जा रहा है... (डेमो)';
+      // Simulate a send
+      setTimeout(() => {
+        status.textContent = `धन्यवाद, ${name}! आपका संदेश प्राप्त हो चुका है।`;
+        form.reset();
+      }, 900);
+    });
   </script>
 </body>
 </html>
