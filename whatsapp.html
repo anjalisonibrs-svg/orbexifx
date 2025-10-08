@@ -3,46 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp Landing Page</title>
+<title>Elite Forex Account Management - XAUUSD Chart Theme</title>
 <style>
   /* Reset & base */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   body, html {
     height: 100%;
     overflow: hidden;
-    background: #0a0a0a;
+    background: #000000; 
     color: #fff;
   }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-  /* Motion background with floating particles */
+  /* Deep Blue Gradient Background for a clean look */
   .background {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1c1c1c, #0a0a0a);
+    background: linear-gradient(135deg, #0f1c30, #040910);
     overflow: hidden;
+    z-index: 1; /* Lowest z-index for the main background */
   }
 
-  .particle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.7);
-    animation: float 10s linear infinite;
+  /*
+  ==================================================
+  CHART CONTAINER STYLE (For TradingView)
+  ==================================================
+  */
+  .chart-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Low opacity for background effect */
+      opacity: 0.3; 
+      z-index: 5; /* Below main content */
+      pointer-events: none; /* Allows clicks to pass through to the content */
   }
 
-  @keyframes float {
-    0% { transform: translateY(100vh) translateX(0) scale(0.5); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-10vh) translateX(100px) scale(1); opacity: 0; }
-  }
-
-  /* Center content */
+  /*
+  ==================================================
+  Content Styling & Price Display (Remains on top)
+  ==================================================
+  */
   .content {
     position: relative;
     height: 100%;
@@ -52,93 +63,155 @@
     align-items: center;
     text-align: center;
     z-index: 10;
+    padding: 20px;
+    background: rgba(4, 9, 16, 0.7); /* Semi-transparent overlay for text readability */
+  }
+
+  /* Simulated Price Display Style (Kept for instant price update) */
+  #xauusd-price {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00ffff; /* Neon Blue */
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #00ffff;
+    margin-bottom: 20px;
+    animation: flicker 1s infinite alternate;
+  }
+
+  @keyframes flicker {
+    from { opacity: 1; }
+    to { opacity: 0.85; }
   }
 
   h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #25d366;
+    font-size: 4em; 
+    margin-bottom: 10px;
+    color: #ffd700; /* Gold */
+    font-weight: 900; 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); 
     animation: fadeInUp 1s ease forwards;
   }
 
   p {
-    font-size: 1.2em;
-    color: #ccc;
-    margin-bottom: 40px;
+    font-size: 1.4em; 
+    color: #e0e0e0; 
+    margin-bottom: 60px;
+    max-width: 700px;
+    font-weight: 400;
     animation: fadeInUp 1.5s ease forwards;
   }
 
   @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
+    0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  /* WhatsApp Button */
+  /* WhatsApp Button Style */
   .whatsapp-btn {
-    background: #25d366;
-    color: #fff;
-    font-size: 1.2em;
-    padding: 15px 30px;
-    border-radius: 50px;
+    background: #25d366; 
+    color: #040910; 
+    font-size: 1.5em;
+    padding: 20px 50px;
+    border-radius: 8px; 
     border: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
-    animation: pulse 2s infinite;
-    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 15px;
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.7); 
+    animation: pulse 2.5s infinite;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
   }
 
   .whatsapp-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+    transform: scale(1.08); 
+    background: #34e77b;
+    box-shadow: 0 0 35px rgba(37, 211, 102, 1);
   }
 
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 rgba(37, 211, 102, 0.4); }
-    50% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.7); }
-    100% { box-shadow: 0 0 0 rgba(37, 211, 102, 0.4); }
+    0% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(37, 211, 102, 0.9); }
+    100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
   }
 
-  /* WhatsApp icon animation */
-  .whatsapp-icon {
-    font-size: 1.5em;
-    animation: bounce 1.5s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  .icon {
+    font-size: 2em;
   }
 
 </style>
 </head>
 <body>
+  
+<div class="background"></div>
 
-<div class="background" id="background"></div>
+<div class="chart-overlay">
+    <div class="tradingview-widget-container" style="height:100%;width:100%">
+      <div id="tradingview_3d85d" style="height:100%;width:100%"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script type="text/javascript">
+      new TradingView.widget(
+      {
+      "width": "100%",
+      "height": "100%",
+      "symbol": "FX_IDC:XAUUSD",
+      "interval": "D",
+      "timezone": "Etc/UTC",
+      "theme": "dark", /* Dark theme to match your style */
+      "style": "2",
+      "locale": "en",
+      "toolbar_bg": "#f1f3f6",
+      "enable_publishing": false,
+      "hide_top_toolbar": true, /* Hide top bar to make it cleaner */
+      "hide_legend": true,
+      "save_image": false,
+      "container_id": "tradingview_3d85d"
+    }
+      );
+      </script>
+    </div>
+    </div>
 
 <div class="content">
-  <h1>Connect With Us on WhatsApp</h1>
-  <p>Fast, reliable, and secure messaging for all your needs.</p>
-  <button class="whatsapp-btn" onclick="window.location='https://wa.me/1234567890';">
-    <span class="whatsapp-icon">💬</span> Chat Now
+  <p id="xauusd-price">XAUUSD: $2050.00</p>
+
+  <h1>Elite Forex & Gold Management</h1>
+  <p>Partner with experienced traders for **secure**, automated growth in the Gold (XAUUSD) and Forex markets. Achieve your financial goals with confidence.</p>
+  <button class="whatsapp-btn" onclick="window.location='https://wa.me/1234567890?text=I%27m%20interested%20in%20Forex%20Account%20Management%20Service';">
+    <span class="icon">📈</span> START YOUR CONSULTATION
   </button>
 </div>
 
 <script>
-  // Create floating particles
-  const bg = document.getElementById('background');
-  for(let i=0; i<50; i++){
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.width = `${Math.random()*10 + 5}px`;
-    p.style.height = p.style.width;
-    p.style.left = `${Math.random()*100}%`;
-    p.style.animationDuration = `${5 + Math.random()*10}s`;
-    p.style.animationDelay = `${Math.random()*5}s`;
-    bg.appendChild(p);
+  // ==================================================
+  // Simulated Live Price JavaScript (Kept)
+  // The simulated price is still useful for an instant price display while the chart loads.
+  // ==================================================
+  const priceElement = document.getElementById('xauusd-price');
+  let currentPrice = 2050.00; // Starting price
+
+  function updateSimulatedPrice() {
+    const change = (Math.random() - 0.5) * 0.4;
+    currentPrice += change;
+    
+    if (currentPrice > 2060.00) {
+      currentPrice = 2060.00;
+    } else if (currentPrice < 2040.00) {
+      currentPrice = 2040.00;
+    }
+
+    const formattedPrice = currentPrice.toFixed(2);
+    priceElement.textContent = `XAUUSD: $${formattedPrice}`;
   }
+
+  setInterval(updateSimulatedPrice, 1000);
+  updateSimulatedPrice(); 
+
 </script>
 
 </body>
