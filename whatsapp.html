@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact via WhatsApp</title>
+  <style>
+    :root{
+      --wa:#25D366;
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --accent:#0077ff;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px}
+    .card{width:100%;max-width:520px;background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(16,24,40,0.08);padding:34px;text-align:center}
+    h1{margin:0 0 10px;font-size:22px;color:var(--text)}
+    p{margin:0 0 18px;color:#4b5563}
+    .btn{
+      display:inline-flex;align-items:center;gap:12px;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600;
+      color:white;
+    }
+    .wa{background:linear-gradient(180deg,var(--wa),#1aa65a);box-shadow:0 8px 24px rgba(37,211,102,0.14)}
+    .tg{background:transparent;color:var(--accent);border:2px solid rgba(0,119,255,0.12);padding:10px 14px;border-radius:10px;font-weight:600}
+    .icons{font-size:18px}
+    .small{margin-top:14px;color:#6b7280;font-size:14px}
+    @media (max-width:520px){
+      .card{padding:20px;border-radius:12px}
+      h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>हमसे WhatsApp पर संपर्क करें</h1>
+    <p>नीचे वाले बटन पर क्लिक कर के सीधे WhatsApp पर चैट शुरू करें। Telegram चैनल का लिंक भी दिया है।</p>
+
+    <!-- 1) WhatsApp बटन — नीचे href में PHONE_NUMBER और (वैकल्पिक) text बदलें -->
+    <a class="btn wa" id="waBtn" target="_blank" rel="noopener noreferrer"
+       href="https://wa.me/PHONE_NUMBER?text=नमस्ते%20मैं%20Orbexifx%20के%20बारे%20में%20जानना%20चाहता%20/%20चाहती%20हूँ">
+      <span class="icons">💬</span>
+      <span>WhatsApp पर संपर्क करें</span>
+    </a>
+
+    <div style="height:14px"></div>
+
+    <!-- 2) Telegram चैनल लिंक -->
+    <a class="tg" id="tgBtn" target="_blank" rel="noopener noreferrer" href="TELEGRAM_URL">
+      <span class="icons">📣</span>
+      <span>हमारा Telegram चैनल देखें</span>
+    </a>
+
+    <div class="small">टिप: मोबाइल पर WhatsApp इंस्टॉल होना चाहिए; डेस्कटॉप पर WhatsApp Web के लिए लॉगिन करना होगा।</div>
+  </div>
+
+  <script>
+    // OPTIONAL: runtime पर phone/message बदलने के लिए (अगर आप सीधे HTML में नहीं बदलना चाहते)
+    // const phone = "PHONE_NUMBER";
+    // const msg = encodeURIComponent("नमस्ते, मुझे जानकारी चाहिए");
+    // document.getElementById('waBtn').href = `https://wa.me/${phone}?text=${msg}`;
+    // document.getElementById('tgBtn').href = "TELEGRAM_URL";
+  </script>
+</body>
+</html>
