@@ -3,25 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forex Account Management - XAUUSD - Investing Style</title>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1737549780233393');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <style>
+<title>Forex Account Management - Orbexi FX Style (Updated for Funding Pips Look)</title>
+<style>
   /* Reset & Base */
   * {
     margin: 0;
@@ -33,8 +16,9 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
   body, html {
     height: 100%;
     overflow: hidden;
-    background: #f0f0f0; 
-    color: #333;
+    /* Updated background to use a dark blue/purple from Funding Pips brand colors: #0C1267 (RGB 12, 18, 103) */
+    background: #0C1267; 
+    color: #fff; /* Default white text */
   }
   
   /* Import Google Font for a clean look */
@@ -43,7 +27,7 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
   /*
   ==================================================
   CHART CONTAINER STYLE (TradingView - Background)
-  OPACITY 1.0 (100%)
+  OPACITY 1.0 (100%) - Adjusted for dark theme
   ==================================================
   */
   .chart-overlay {
@@ -52,17 +36,16 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
       left: 0;
       width: 100%;
       height: 100%;
-      /* Opacity set to 1.0 (100%) */
-      opacity: 1.0; 
+      opacity: .4; 
       z-index: 5; 
-      pointer-events: none; /* Allows clicks to pass through to the content */
+      pointer-events: none; 
+      /* Optional: You can add a subtle filter to match a trading vibe, but for now, it's neutral. */
       filter: none; 
   }
 
   /*
   ==================================================
-  Content Styling (Investing.com Inspired)
-  *** Content Background Opacity Reduced for Chart Visibility ***
+  Content Styling (Funding Pips Dark Overlay)
   ==================================================
   */
   .content {
@@ -75,23 +58,24 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
     text-align: center;
     z-index: 10;
     padding: 20px;
-    /* Reduced white overlay opacity to 0.80 (20% transparency) for chart visibility */
-    background: rgba(255, 255, 255, 0.80); 
+    /* Dark blue overlay (85% opaque) for text readability over the chart. Using a darker shade from FP: #000042 */
+    background: rgba(0, 0, 66, 0.85); 
   }
   
   h1 {
     font-size: 3.5em; 
     margin-bottom: 5px;
-    color: #212121; 
+    /* White text is maintained */
+    color: #ffffff; 
     font-weight: 800; 
   }
   
-  /* Main Service Line - ITALIC */
+  /* Main Service Line - ITALIC & RED (Orbexi FX Red is maintained) */
   h2 {
     font-size: 1.8em;
     margin-bottom: 40px;
-    color: #1a73e8; /* Blue accent color */
-    font-weight: 400;
+    color: #e52627; 
+    font-weight: 700; 
     text-transform: uppercase;
     letter-spacing: 2px;
     font-style: italic;
@@ -99,15 +83,21 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
 
   p {
     font-size: 1.2em; 
-    color: #555; 
+    /* Lighter white for body text */
+    color: #e0e0e0; 
     margin-bottom: 40px;
     max-width: 650px;
     font-weight: 400;
   }
 
-  /* WhatsApp Button - DARK GREEN & NO EMOJI */
+  /*
+  ==================================================
+  WhatsApp Button - Orbexi FX Red is maintained
+  ==================================================
+  */
   .whatsapp-btn {
-    background: #075e54; /* Deep Green */
+    /* Red color from Orbexi FX logo */
+    background: #e52627; 
     color: #ffffff; 
     font-size: 1.3em;
     padding: 15px 40px;
@@ -125,7 +115,8 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
 
   .whatsapp-btn:hover {
     transform: translateY(-2px); 
-    background: #128c7e; /* Slightly lighter green on hover */
+    /* Slightly darker red on hover */
+    background: #cc0000; 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
 
@@ -147,10 +138,10 @@ src="https://www.facebook.com/tr?id=1737549780233393&ev=PageView&noscript=1"
       "symbol": "FX_IDC:XAUUSD",
       "interval": "5",
       "timezone": "Etc/UTC",
-      "theme": "light", /* Light theme for Investing.com style */
-      "style": "1", /* Candlesticks style */
+      "theme": "dark", /* Changed to DARK theme to match the new dark blue background */
+      "style": "3", /* Line Chart Style */
       "locale": "en",
-      "toolbar_bg": "#f1f3f6",
+      "toolbar_bg": "#0C1267", /* Updated toolbar to match Funding Pips blue */
       "enable_publishing": false,
       "hide_top_toolbar": true,
       "hide_legend": true,
