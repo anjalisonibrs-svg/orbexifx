@@ -3,38 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Forex Account Management - XAUUSD Chart Theme</title>
+<title>Forex Account Management - XAUUSD - Investing Style</title>
 <style>
-  /* Reset & base */
+  /* Reset & Base */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   body, html {
     height: 100%;
     overflow: hidden;
-    background: #000000; 
-    color: #fff;
+    background: #f0f0f0; 
+    color: #333;
   }
   
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-
-  /* Deep Blue Gradient Background for a clean look */
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0f1c30, #040910);
-    overflow: hidden;
-    z-index: 1; /* Lowest z-index for the main background */
-  }
+  /* Import Google Font for a clean look */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
 
   /*
   ==================================================
-  CHART CONTAINER STYLE (For TradingView)
+  CHART CONTAINER STYLE (TradingView - Background)
+  OPACITY 1.0 (100%)
   ==================================================
   */
   .chart-overlay {
@@ -43,15 +35,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* Low opacity for background effect */
-      opacity: 0.3; 
-      z-index: 5; /* Below main content */
+      /* Opacity set to 1.0 (100%) */
+      opacity: 1.0; 
+      z-index: 5; 
       pointer-events: none; /* Allows clicks to pass through to the content */
+      filter: none; 
   }
 
   /*
   ==================================================
-  Content Styling & Price Display (Remains on top)
+  Content Styling (Investing.com Inspired)
+  *** Content Background Opacity Reduced for Chart Visibility ***
   ==================================================
   */
   .content {
@@ -64,84 +58,58 @@
     text-align: center;
     z-index: 10;
     padding: 20px;
-    background: rgba(4, 9, 16, 0.7); /* Semi-transparent overlay for text readability */
+    /* Reduced white overlay opacity to 0.80 (20% transparency) for chart visibility */
+    background: rgba(255, 255, 255, 0.80); 
   }
-
-  /* Simulated Price Display Style (Kept for instant price update) */
-  #xauusd-price {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #00ffff; /* Neon Blue */
-    background: rgba(0, 0, 0, 0.4); 
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: 1px solid #00ffff;
-    margin-bottom: 20px;
-    animation: flicker 1s infinite alternate;
-  }
-
-  @keyframes flicker {
-    from { opacity: 1; }
-    to { opacity: 0.85; }
-  }
-
+  
   h1 {
-    font-size: 4em; 
-    margin-bottom: 10px;
-    color: #ffd700; /* Gold */
-    font-weight: 900; 
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); 
-    animation: fadeInUp 1s ease forwards;
+    font-size: 3.5em; 
+    margin-bottom: 5px;
+    color: #212121; 
+    font-weight: 800; 
+  }
+  
+  /* Main Service Line - ITALIC */
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    color: #1a73e8; /* Blue accent color */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
   }
 
   p {
-    font-size: 1.4em; 
-    color: #e0e0e0; 
-    margin-bottom: 60px;
-    max-width: 700px;
+    font-size: 1.2em; 
+    color: #555; 
+    margin-bottom: 40px;
+    max-width: 650px;
     font-weight: 400;
-    animation: fadeInUp 1.5s ease forwards;
   }
 
-  @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  /* WhatsApp Button Style */
+  /* WhatsApp Button - DARK GREEN & NO EMOJI */
   .whatsapp-btn {
-    background: #25d366; 
-    color: #040910; 
-    font-size: 1.5em;
-    padding: 20px 50px;
-    border-radius: 8px; 
+    background: #075e54; /* Deep Green */
+    color: #ffffff; 
+    font-size: 1.3em;
+    padding: 15px 40px;
+    border-radius: 4px; 
     border: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
-    box-shadow: 0 0 25px rgba(37, 211, 102, 0.7); 
-    animation: pulse 2.5s infinite;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 2px;
   }
 
   .whatsapp-btn:hover {
-    transform: scale(1.08); 
-    background: #34e77b;
-    box-shadow: 0 0 35px rgba(37, 211, 102, 1);
-  }
-
-  @keyframes pulse {
-    0% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
-    50% { box-shadow: 0 0 40px rgba(37, 211, 102, 0.9); }
-    100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
-  }
-
-  .icon {
-    font-size: 2em;
+    transform: translateY(-2px); 
+    background: #128c7e; /* Slightly lighter green on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
 
 </style>
@@ -152,7 +120,7 @@
 
 <div class="chart-overlay">
     <div class="tradingview-widget-container" style="height:100%;width:100%">
-      <div id="tradingview_3d85d" style="height:100%;width:100%"></div>
+      <div id="tradingview_chart" style="height:100%;width:100%"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
       <script type="text/javascript">
       new TradingView.widget(
@@ -160,17 +128,18 @@
       "width": "100%",
       "height": "100%",
       "symbol": "FX_IDC:XAUUSD",
-      "interval": "D",
+      "interval": "5",
       "timezone": "Etc/UTC",
-      "theme": "dark", /* Dark theme to match your style */
-      "style": "2",
+      "theme": "light", /* Light theme for Investing.com style */
+      "style": "1", /* Candlesticks style */
       "locale": "en",
       "toolbar_bg": "#f1f3f6",
       "enable_publishing": false,
-      "hide_top_toolbar": true, /* Hide top bar to make it cleaner */
+      "hide_top_toolbar": true,
       "hide_legend": true,
+      "hide_side_toolbar": true,
       "save_image": false,
-      "container_id": "tradingview_3d85d"
+      "container_id": "tradingview_chart"
     }
       );
       </script>
@@ -178,41 +147,16 @@
     </div>
 
 <div class="content">
-  <p id="xauusd-price">XAUUSD: $2050.00</p>
-
-  <h1>Elite Forex & Gold Management</h1>
-  <p>Partner with experienced traders for **secure**, automated growth in the Gold (XAUUSD) and Forex markets. Achieve your financial goals with confidence.</p>
+  
+  <h1>GOLD (XAU/USD) TRADING</h1>
+  <h2>ELITE ACCOUNT MANAGEMENT</h2>
+  
+  <p>Profit from volatility with our professionally managed accounts. We leverage expert analysis and disciplined strategies to grow your capital in the Forex and Gold markets.</p>
+  
   <button class="whatsapp-btn" onclick="window.location='https://wa.me/1234567890?text=I%27m%20interested%20in%20Forex%20Account%20Management%20Service';">
-    <span class="icon">📈</span> START YOUR CONSULTATION
+    GET FREE CONSULTATION ON WHATSAPP
   </button>
 </div>
-
-<script>
-  // ==================================================
-  // Simulated Live Price JavaScript (Kept)
-  // The simulated price is still useful for an instant price display while the chart loads.
-  // ==================================================
-  const priceElement = document.getElementById('xauusd-price');
-  let currentPrice = 2050.00; // Starting price
-
-  function updateSimulatedPrice() {
-    const change = (Math.random() - 0.5) * 0.4;
-    currentPrice += change;
-    
-    if (currentPrice > 2060.00) {
-      currentPrice = 2060.00;
-    } else if (currentPrice < 2040.00) {
-      currentPrice = 2040.00;
-    }
-
-    const formattedPrice = currentPrice.toFixed(2);
-    priceElement.textContent = `XAUUSD: $${formattedPrice}`;
-  }
-
-  setInterval(updateSimulatedPrice, 1000);
-  updateSimulatedPrice(); 
-
-</script>
 
 </body>
 </html>
