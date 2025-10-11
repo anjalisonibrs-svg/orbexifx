@@ -17,7 +17,9 @@
     /* Unique Animated Background */
     .page-bg{
       /* Deep space-like gradient */
-      background
+      background: linear-gradient(135deg, #000c1f 0%, #1a0033 50%, #001f3a 100%);
+      background-size: 400% 400%; /* Required for animation */
+      animation: gradientShift 18s ease infinite; /* Slow, continuous movement */
     } 
 
     @keyframes gradientShift {
