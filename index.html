@@ -112,6 +112,50 @@
           <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">View All Signals &rarr;</a>
         </div>
 
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">Ticker tape</span></a><span class="trademark"> by TradingView</span></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "colorTheme": "light",
+  "locale": "en",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "displayMode": "adaptive"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+        
+
         <!-- Simple live-price row: Gold (XAU/USD) + EUR/USD + USD/JPY -->
         <div class="mt-8 grid md:grid-cols-3 gap-8">
 
@@ -395,3 +439,4 @@
   </script>
 </body>
 </html>
+
