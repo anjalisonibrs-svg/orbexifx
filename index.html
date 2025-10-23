@@ -1,434 +1,243 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbexifx — Trade Smarter</title>
-  <meta name="description" content="Orbexifx - Market research, trading signals, and forex analysis." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* small custom styles */
-    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
-    /* subtle image zoom on hover for article hero images */
-    .card-img-wrap { transition: transform 0.45s ease; }
-    article:hover .card-img-wrap img { transform: scale(1.06); }
-  </style>
-
-</head> 
-<body class="bg-gray-900 text-gray-100 antialiased leading-relaxed">
-  <header class="sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain">
-        <div>
-          <div class="font-bold text-xl">Orbexifx</div>
-          <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
-        <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
-        <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition">Analysis</a>
-        <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
-        <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
-        <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
-      </nav>
-      <div class="md:hidden">
-        <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
-    </div>
-    <!-- warning removed from header (now placed subtly at page edge) -->
-  </header>
-
-  <main>
-    <section class="pt-20 pb-16">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-5xl md:text-6xl font-extrabold leading-snug tracking-tight">Real-time <span class="text-indigo-400">Forex Signals</span> & Expert Market Research</h1>
-          <p class="mt-5 text-gray-300 max-w-xl text-lg">Market-proven setups, actionable signals, and clear analysis to help traders make informed, disciplined decisions. Free and premium plans available.</p>
-          <div class="mt-8 flex gap-4">
-            <a href="#signup" class="px-6 py-3 rounded-xl bg-indigo-600 font-bold text-lg hover:bg-indigo-500 transition shadow-2xl shadow-indigo-900/50">Start Free Account</a>
-            <a href="#features" class="px-6 py-3 rounded-xl bg-gray-800 border border-gray-700 font-medium hover:bg-gray-700 transition">Explore Features</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orbexifx — Updated</title>
+    <!-- Tailwind CDN for quick styling (replace with your build in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Small, optional tweaks to ensure the footer looks good even without a full Tailwind build */
+      body { background: #0f1724; color: #e6eef8; }
+      .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+      .card-img-wrap { transition: transform 0.45s ease; }
+      article:hover .card-img-wrap img { transform: scale(1.06); }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-900 text-gray-100 antialiased leading-relaxed">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent border-b border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain">
+          <div>
+            <div class="font-bold text-xl">Orbexifx</div>
+            <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
           </div>
-          <div class="mt-8 text-sm text-gray-400 border-l-4 border-indigo-600 pl-4 py-1">Trusted by traders worldwide • Weekly market reports • 24/7 community support</div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
+          <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
+          <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition">Analysis</a>
+          <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
+          <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
+          <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
         </div>
-        <div class="relative">
-          <div class="rounded-3xl overflow-hidden shadow-2xl glass border border-gray-700/50 transform hover:scale-[1.01] transition-transform duration-300">
-            <img src="gifmobile.gif" alt="Live Signal Example" class="w-full h-auto"/>
-            <div class="p-6 bg-gray-800/70">
-              <div class="flex items-center justify-between">
-                <div>
-                  <div class="text-sm text-indigo-400 font-semibold">Live Trade Signal</div>
-                  <div class="font-bold text-2xl mt-1">EUR/USD: BUY @ 1.0982</div>
-                  <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
+      </div>
+    </header>
+
+    <!-- TradingView ticker (moved just below header) -->
+    <section class="py-2 bg-gray-900 border-b border-gray-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">Ticker tape</span></a><span class="trademark"> by TradingView</span>
+          </div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+            "symbols": [
+              { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+              { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+              { "proName": "FX_IDC:EURUSD", "title": "EUR to USD" },
+              { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+              { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" }
+            ],
+            "colorTheme": "light",
+            "locale": "en",
+            "largeChartUrl": "",
+            "isTransparent": false,
+            "showSymbolLogo": true,
+            "displayMode": "adaptive"
+          }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+    </section>
+
+    <main class="flex-1">
+      <section class="pt-20 pb-16">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-snug tracking-tight">Real-time <span class="text-indigo-400">Forex Signals</span> & Expert Market Research</h1>
+            <p class="mt-5 text-gray-300 max-w-xl text-lg">Market-proven setups, actionable signals, and clear analysis to help traders make informed, disciplined decisions. Free and premium plans available.</p>
+            <div class="mt-8 flex gap-4">
+              <a href="#signup" class="px-6 py-3 rounded-xl bg-indigo-600 font-bold text-lg hover:bg-indigo-500 transition shadow-2xl shadow-indigo-900/50">Start Free Account</a>
+              <a href="#features" class="px-6 py-3 rounded-xl bg-gray-800 border border-gray-700 font-medium hover:bg-gray-700 transition">Explore Features</a>
+            </div>
+            <div class="mt-8 text-sm text-gray-400 border-l-4 border-indigo-600 pl-4 py-1">Trusted by traders worldwide • Weekly market reports • 24/7 community support</div>
+          </div>
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl glass border border-gray-700/50 transform hover:scale-[1.01] transition-transform duration-300">
+              <img src="gifmobile.gif" alt="Live Signal Example" class="w-full h-auto"/>
+              <div class="p-6 bg-gray-800/70">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-sm text-indigo-400 font-semibold">Live Trade Signal</div>
+                    <div class="font-bold text-2xl mt-1">EUR/USD: BUY @ 1.0982</div>
+                    <div class="text-xs text-gray-400 mt-1 font-medium">RR 1:3</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-md font-medium text-green-400">Target (TP): 1.1108</div>
+                    <div class="text-md font-medium text-red-400">Stop Loss (SL): 1.0940</div>
+                  </div>
                 </div>
-                <div class="text-right">
-                  <div class="text-md font-medium text-green-400">Target (TP): 1.1108</div>
-                  <div class="text-md font-medium text-red-400">Stop Loss (SL): 1.0940</div>
-                </div>
+                <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Updated: 12 minutes ago</div>
               </div>
-              <div class="mt-4 text-xs text-gray-500 border-t border-gray-700 pt-2">Updated: 12 minutes ago</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="features" class="py-16 border-t border-gray-800 bg-gray-900">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center">Your Trading Edge</h2>
-        <p class="text-center text-gray-400 mt-3 mb-10">We provide the essential tools and insights for better decision-making.</p>
-        <div class="mt-6 grid md:grid-cols-3 gap-8">
-          <div class="p-8 bg-gray-800 rounded-2xl border border-indigo-700/50 shadow-xl hover:shadow-indigo-900/30 transition">
-            <h3 class="font-bold text-xl text-indigo-400">Actionable Live Signals</h3>
-            <p class="mt-3 text-gray-400">High-probability trade setups for forex and major markets, complete with clear entry, exit, and essential risk management parameters.</p>
+      <section id="features" class="py-16 border-t border-gray-800 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center">Your Trading Edge</h2>
+          <p class="text-center text-gray-400 mt-3 mb-10">We provide the essential tools and insights for better decision-making.</p>
+          <div class="mt-6 grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-gray-800 rounded-2xl border border-indigo-700/50 shadow-xl hover:shadow-indigo-900/30 transition">
+              <h3 class="font-bold text-xl text-indigo-400">Actionable Live Signals</h3>
+              <p class="mt-3 text-gray-400">High-probability trade setups for forex and major markets, complete with clear entry, exit, and essential risk management parameters.</p>
+            </div>
+            <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
+              <h3 class="font-bold text-xl">In-Depth Daily Analysis</h3>
+              <p class="mt-3 text-gray-400">Professional market commentary, technical breakdowns, and fundamental insights for key currency pairs, delivered daily to your inbox.</p>
+            </div>
+            <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
+              <h3 class="font-bold text-xl">Vibrant Trader Community</h3>
+              <p class="mt-3 text-gray-400">Access our exclusive Telegram/Discord groups to discuss real-time trades, share strategies, and learn from experienced peers in a 24/7 environment.</p>
+            </div>
           </div>
-          <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
-            <h3 class="font-bold text-xl">In-Depth Daily Analysis</h3>
-            <p class="mt-3 text-gray-400">Professional market commentary, technical breakdowns, and fundamental insights for key currency pairs, delivered daily to your inbox.</p>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog" class="py-16 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex items-center justify-between">
+            <h2 class="text-3xl font-bold">Latest Market Analysis & Education</h2>
+            <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition" aria-label="Read all articles">Read All Articles &rarr;</a>
           </div>
-          <div class="p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-lg hover:border-indigo-700/50 transition">
-            <h3 class="font-bold text-xl">Vibrant Trader Community</h3>
-            <p class="mt-3 text-gray-400">Access our exclusive Telegram/Discord groups to discuss real-time trades, share strategies, and learn from experienced peers in a 24/7 environment.</p>
+
+          <div class="mt-8 grid md:grid-cols-3 gap-8 items-start">
+            <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
+              <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
+                <img src="support.png" alt="Understanding Support and Resistance levels" loading="lazy" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="font-bold text-xl hover:text-indigo-400 transition">Understanding Major Support &amp; Resistance</h3>
+                <p class="mt-2 text-sm text-gray-400 flex-1">A quick, practical guide to identifying key technical levels and how to trade them effectively.</p>
+                <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 28, 2025 • 4 min read</div>
+              </div>
+            </article>
+
+            <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
+              <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
+                <img src="gt.png" alt="How to build a trading plan blueprint" loading="lazy" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="font-bold text-xl hover:text-indigo-400 transition">Blueprint: How to Build a Trading Plan</h3>
+                <p class="mt-2 text-sm text-gray-400 flex-1">The essential guide for consistent trading, centering on robust risk management and strategy implementation.</p>
+                <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 25, 2025 • 6 min read</div>
+              </div>
+            </article>
+
+            <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
+              <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
+                <img src="stt.jpg" alt="Top indicators for forex traders" loading="lazy" class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="font-bold text-xl hover:text-indigo-400 transition">Top Indicators for Forex Traders</h3>
+                <p class="mt-2 text-sm text-gray-400 flex-1">Discover the indicators that truly add value to your analysis — and learn how to use them with precision.</p>
+                <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 22, 2025 • 5 min read</div>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about" class="py-16 border-t border-gray-800">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold">About Orbexifx: Discipline, Clarity, Risk Control</h2>
-          <p class="mt-4 text-lg text-gray-300 leading-relaxed">Orbexifx converts complex financial data into plain, reliable guidance for forex and major financial markets. We equip traders with information and strong risk-control principles needed to navigate markets effectively.</p>
-          <p class="mt-4 text-gray-300 leading-relaxed">Our methodology is centered on robust technical analysis, multi-timeframe perspective, and strict risk-management protocols. We cater to all skill levels.</p>
-      </div>
-    </section>
+      <section id="contact" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-6 bg-gray-800 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl">
+          <h2 class="text-3xl font-bold text-center">Connect with Orbexifx</h2>
+          <p class="text-gray-400 mt-3 text-center text-lg">Follow or message us on any platform — we reply quickly.</p>
 
-    <section id="signals" class="py-16 border-t border-gray-800 bg-gray-900">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex items-center justify-between">
-          <h2 class="text-3xl font-bold">Live Prices</h2>
-          <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition">View All Signals &rarr;</a>
+          <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://www.facebook.com/orbexifx/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition shadow-md">
+              <!-- Facebook SVG --> Facebook
+            </a>
+            <a href="https://instagram.com/orbexifx" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 transition shadow-md">
+              <!-- Instagram SVG --> Instagram
+            </a>
+            <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition shadow-md">
+              <!-- Telegram SVG --> Telegram
+            </a>
+            <a href="https://wa.me/447848159916" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-green-600 hover:bg-green-500 transition shadow-md">
+              <!-- WhatsApp SVG --> WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 mt-12 py-10 bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-start">
+        <!-- Column 1: Brand -->
+        <div class="flex items-center gap-3">
+          <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain opacity-80">
+          <div>
+            <div class="font-bold text-lg">Orbexifx</div>
+            <div class="text-sm text-gray-500">© <span id="year"></span> Orbexifx. All rights reserved.</div>
+          </div>
         </div>
 
-
-
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">Ticker tape</span></a><span class="trademark"> by TradingView</span></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500 Index"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "US 100 Cash CFD"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR to USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "Bitcoin"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "Ethereum"
-    }
-  ],
-  "colorTheme": "light",
-  "locale": "en",
-  "largeChartUrl": "",
-  "isTransparent": false,
-  "showSymbolLogo": true,
-  "displayMode": "adaptive"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
-
-
-        
-
-        
-          <article class="p-6 bg-gray-800 rounded-xl border border-gray-700 shadow-lg flex flex-col items-start">
-            <div class="w-full flex items-center justify-between">
-              <div>
-                <div class="text-md text-gray-400 font-medium">EUR/USD</div>
-                <div id="eurusd_price" class="font-bold text-2xl text-green-300 mt-1">Loading...</div>
-              </div>
-              <div class="text-right">
-                <div id="eurusd_change" class="text-sm text-gray-400">—</div>
-                <div id="eurusd_updated" class="text-xs text-gray-500 mt-1">—</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="p-6 bg-gray-800 rounded-xl border border-gray-700 shadow-lg flex flex-col items-start">
-            <div class="w-full flex items-center justify-between">
-              <div>
-                <div class="text-md text-gray-400 font-medium">USD/JPY</div>
-                <div id="usdjpy_price" class="font-bold text-2xl text-red-300 mt-1">Loading...</div>
-              </div>
-              <div class="text-right">
-                <div id="usdjpy_change" class="text-sm text-gray-400">—</div>
-                <div id="usdjpy_updated" class="text-xs text-gray-500 mt-1">—</div>
-              </div>
-            </div>
-          </article>
-
+        <!-- Column 2: Footer menu (Privacy / Terms / AML) -->
+        <div class="text-sm text-gray-300 flex flex-col items-center space-y-2">
+          <div class="font-semibold text-gray-200 mb-1">Important</div>
+          <nav class="flex flex-col md:flex-row gap-3 md:gap-6">
+            <a href="/privacy.html" class="hover:text-indigo-400 transition">Privacy Policy</a>
+            <a href="/terms.html" class="hover:text-indigo-400 transition">Terms &amp; Condition</a>
+            <a href="/aml.html" class="hover:text-indigo-400 transition">AML Policy</a>
+          </nav>
+          <div class="mt-3 text-xs text-gray-500">These pages explain how we handle data, responsible use, and compliance.</div>
         </div>
 
-        <script>
-          // Try Google Finance page first (client-side). Falls back to Yahoo if Google is blocked by CORS.
-          async function fetchFromGooglePage(googlePath){
-            try{
-              const url = `https://www.google.com/finance/quote/${googlePath}`;
-              const res = await fetch(url, { cache: 'no-cache' });
-              if(!res.ok) throw new Error('no-google');
-              const text = await res.text();
+        <!-- Column 3: Contact -->
+        <div class="text-sm text-gray-500 text-right">
+          <p>Email: <a href="mailto:help@orbexifx.xyz" class="text-indigo-400 hover:text-white">help@orbexifx.xyz</a></p>
+          <p>Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-400 hover:text-white">@orbexifx</a></p>
+          <div class="mt-3 flex justify-end gap-3">
+            <a href="https://facebook.com/orbexifx" target="_blank" class="text-xs px-3 py-2 bg-blue-700/10 rounded">Facebook</a>
+            <a href="https://instagram.com/orbexifx" target="_blank" class="text-xs px-3 py-2 bg-pink-600/10 rounded">Instagram</a>
+          </div>
+           </footer>
 
-              // Parse the returned HTML and look for the element that typically contains the price.
-              const doc = new DOMParser().parseFromString(text, 'text/html');
-              // Google often uses a class containing 'YMlKec' for the main price element.
-              const el = doc.querySelector("[class*='YMlKec']");
-              if(el && el.textContent){
-                const raw = el.textContent.replace(/,/g, '').trim();
-                const val = parseFloat(raw);
-                if(!isNaN(val)) return val;
-              }
-
-              // If parsing fails, return null so caller can fallback
-              return null;
-            }catch(e){
-              return null;
-            }
-          }
-
-          async function fetchFromYahoo(symbol){
-            try{
-              const q = encodeURIComponent(symbol);
-              const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${q}`;
-              const res = await fetch(url);
-              if(!res.ok) throw new Error('no-yahoo');
-              const data = await res.json();
-              const price = data?.quoteResponse?.result?.[0]?.regularMarketPrice;
-              const prevClose = data?.quoteResponse?.result?.[0]?.regularMarketPreviousClose;
-              return { price, prevClose };
-            }catch(e){
-              return { price: null, prevClose: null };
-            }
-          }
-
-          const prev = { gold: null, eurusd: null, usdjpy: null };
-
-          function showChange(elemId, value, prevValue, decimals){
-            const el = document.getElementById(elemId);
-            if(value == null){ el.textContent = 'N/A'; el.className = 'text-sm text-gray-400'; return; }
-            const diff = (value - (prevValue ?? value));
-            const pct = prevValue ? (diff / prevValue * 100) : 0;
-            const sign = diff > 0 ? '▲' : (diff < 0 ? '▼' : '—');
-            const cls = diff > 0 ? 'text-sm text-green-400' : (diff < 0 ? 'text-sm text-red-400' : 'text-sm text-gray-400');
-            el.textContent = `${sign} ${Math.abs(diff).toFixed(decimals)} (${pct ? pct.toFixed(2) + '%' : '0.00%'} )`;
-            el.className = cls;
-          }
-
-          function setUpdated(elemId){
-            const el = document.getElementById(elemId);
-            el.textContent = new Date().toLocaleTimeString('en-GB', { hour12: false });
-          }
-
-          async function updatePrices(){
-            // Try Google page first for each symbol. If blocked or parsing fails, fallback to Yahoo.
-
-            const gGoogle = await fetchFromGooglePage('XAU-USD');
-            if(gGoogle !== null){
-              const price = gGoogle;
-              document.getElementById('gold_price').textContent = (Math.round(price*100)/100).toLocaleString();
-              showChange('gold_change', price, prev.gold, 2);
-              setUpdated('gold_updated');
-              prev.gold = price;
-            } else {
-              const g = await fetchFromYahoo('GC=F');
-              if(g.price !== null){
-                document.getElementById('gold_price').textContent = (Math.round(g.price*100)/100).toLocaleString();
-                showChange('gold_change', g.price, g.prevClose, 2);
-                setUpdated('gold_updated');
-                prev.gold = g.price;
-              }
-            }
-
-            const eGoogle = await fetchFromGooglePage('EUR-USD');
-            if(eGoogle !== null){
-              const price = eGoogle;
-              document.getElementById('eurusd_price').textContent = Number(price).toFixed(5);
-              showChange('eurusd_change', price, prev.eurusd, 5);
-              setUpdated('eurusd_updated');
-              prev.eurusd = price;
-            } else {
-              const e = await fetchFromYahoo('EURUSD=X');
-              if(e.price !== null){
-                document.getElementById('eurusd_price').textContent = Number(e.price).toFixed(5);
-                showChange('eurusd_change', e.price, e.prevClose, 5);
-                setUpdated('eurusd_updated');
-                prev.eurusd = e.price;
-              }
-            }
-
-            const uGoogle = await fetchFromGooglePage('USD-JPY');
-            if(uGoogle !== null){
-              const price = uGoogle;
-              document.getElementById('usdjpy_price').textContent = Number(price).toFixed(3);
-              showChange('usdjpy_change', price, prev.usdjpy, 3);
-              setUpdated('usdjpy_updated');
-              prev.usdjpy = price;
-            } else {
-              const u = await fetchFromYahoo('JPY=X');
-              if(u.price !== null){
-                document.getElementById('usdjpy_price').textContent = Number(u.price).toFixed(3);
-                showChange('usdjpy_change', u.price, u.prevClose, 3);
-                setUpdated('usdjpy_updated');
-                prev.usdjpy = u.price;
-              }
-            }
-          }
-
-          // initial and polling
-          updatePrices();
-          setInterval(updatePrices, 15000);
-        </script>
-      </div>
-    </section>
-
-    <!-- ===== BLOG / Latest Market Analysis & Education (IMPROVED IMAGE SIZING) ===== -->
-    <section id="blog" class="py-16 border-t border-gray-800">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex items-center justify-between">
-          <h2 class="text-3xl font-bold">Latest Market Analysis & Education</h2>
-          <a href="#" class="text-md font-medium text-indigo-400 hover:text-white transition" aria-label="Read all articles">Read All Articles &rarr;</a>
-        </div>
-
-        <!-- Use grid with items-start and consistent article card layout so content heights match -->
-        <div class="mt-8 grid md:grid-cols-3 gap-8 items-start">
-
-          <!-- Article: unified image wrapper height, lazy-loading, object-cover to make images same size -->
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
-            <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
-              <img src="support.png" alt="Understanding Support and Resistance levels" loading="lazy" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Understanding Major Support &amp; Resistance</h3>
-              <p class="mt-2 text-sm text-gray-400 flex-1">A quick, practical guide to identifying key technical levels and how to trade them effectively.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 28, 2025 • 4 min read</div>
-            </div>
-          </article>
-
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
-            <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
-              <img src="gt.png" alt="How to build a trading plan blueprint" loading="lazy" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Blueprint: How to Build a Trading Plan</h3>
-              <p class="mt-2 text-sm text-gray-400 flex-1">The essential guide for consistent trading, centering on robust risk management and strategy implementation.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 25, 2025 • 6 min read</div>
-            </div>
-          </article>
-
-          <article class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition flex flex-col">
-            <div class="card-img-wrap h-44 md:h-48 lg:h-52 overflow-hidden">
-              <img src="stt.jpg" alt="Top indicators for forex traders" loading="lazy" class="w-full h-full object-cover" />
-            </div>
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="font-bold text-xl hover:text-indigo-400 transition">Top Indicators for Forex Traders</h3>
-              <p class="mt-2 text-sm text-gray-400 flex-1">Discover the indicators that truly add value to your analysis — and learn how to use them with precision.</p>
-              <div class="mt-4 text-xs text-gray-500 font-medium border-t border-gray-700 pt-3">Sep 22, 2025 • 5 min read</div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-gray-900">
-      <div class="max-w-4xl mx-auto px-6 bg-gray-800 p-8 rounded-2xl border border-indigo-700/50 shadow-2xl">
-        <h2 class="text-3xl font-bold text-center">Connect with Orbexifx</h2>
-        <p class="text-gray-400 mt-3 text-center text-lg">Follow or message us on any platform — we reply quickly.</p>
-
-        <!-- Social buttons row (clean, no extra copy) -->
-        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://www.facebook.com/orbexifx/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.5 9.9v-7H8.9v-2.9h1.6V9.2c0-1.6 1-2.5 2.4-2.5.7 0 1.4.1 1.4.1v1.6h-.8c-.8 0-1 .5-1 1v1.2h1.7l-.3 2.9h-1.4v7A10 10 0 0022 12z"/></svg>
-            Facebook
-          </a>
-
-          <a href="https://instagram.com/orbexifx" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A3.8 3.8 0 1015.8 12 3.8 3.8 0 0012 8.2zM18.6 6.3a1.2 1.2 0 11-1.2-1.2 1.2 1.2 0 011.2 1.2z"/></svg>
-            Instagram
-          </a>
-
-          <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 3L3 9.5l4.2 1.5L18 5.6 8.9 15.2 12 21z"/></svg>
-            Telegram
-          </a>
-
-          <a href="https://wa.me/447848159916" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-green-600 hover:bg-green-500 transition shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 .1 4.6.1 10.3c0 1.8.5 3.6 1.4 5.1L0 24l8.9-2.4c1.4.4 2.8.6 4.3.6 6.6 0 11.9-4.6 11.9-10.3 0-2.8-1.1-5.4-3-7.6zM12 21.5c-1.3 0-2.6-.2-3.8-.6L5 20l.8-2.1c-1.1-1.8-1.7-3.9-1.7-6 0-5 4-8.7 9-8.7 2.4 0 4.6.9 6.2 2.6 1.6 1.7 2.5 3.9 2.5 6.2 0 5-4 8.7-9 8.7z"/></svg>
-            WhatsApp
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="border-t border-gray-800 mt-12 py-10 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <img src="250.png" alt="Orbexifx Logo" class="w-8 h-8 object-contain opacity-70">
-        <div>
-          <div class="font-bold text-lg">Orbexifx</div>
-          <div class="text-sm text-gray-500">© <span id="year"></span> Orbexifx. All rights reserved.</div>
-        </div>
-      </div>
-      <div class="text-sm text-gray-500 text-center md:text-right">
-        <p>Email: <a href="mailto:help@orbexifx.xyz" class="text-indigo-400 hover:text-white">help@orbexifx.xyz</a></p>
-        <p>Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-400 hover:text-white">@orbexifx</a></p>
-      </div>
-
-
-
-      
+    <!-- Subtle hidden warning placed at page edge (only one place) -->
+    <div class="fixed bottom-2 right-2 text-xs text-gray-500 opacity-70 pointer-events-none select-none">
+      Warning: Signals are educational only — not financial advice. Trading involves risk.
     </div>
-  </footer>
 
-  <!-- Subtle hidden warning placed at page edge (only one place) -->
-  <div class="fixed bottom-2 right-2 text-xs text-gray-500 opacity-70 pointer-events-none select-none">
-    Warning: Signals are educational only — not financial advice. Trading involves risk.
-  </div>
-
-  <script>
-    // small interactivity
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menuBtn').addEventListener('click', ()=> alert('Mobile menu: you can implement a slide-over here.'));
-
-    function handleSignup(e){
-      e.preventDefault();
-      const f = new FormData(e.target);
-      const name = f.get('name');
-      const email = f.get('email');
-      document.getElementById('msg').textContent = `Thanks ${name || ''}! Check ${email} for next steps.`;
-    }
-  </script>
-</body>
+    <script>
+      // small interactivity
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('menuBtn').addEventListener('click', ()=> alert('Mobile menu: you can implement a slide-over here.'));
+      function handleSignup(e){ e.preventDefault(); const f = new FormData(e.target); const name = f.get('name'); const email = f.get('email'); document.getElementById('msg').textContent = `Thanks ${name || ''}! Check ${email} for next steps.`; }
+    </script>
+  </body>
 </html>
-
-
-
-
