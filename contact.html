@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Orbexifx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>body{background:#0f1724;color:#e6eef8}</style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="py-6 px-6 border-b border-gray-800">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/250.png" alt="Orbexifx" class="w-10 h-10 object-contain">
+          <div class="font-bold">Orbexifx</div>
+        </a>
+        <nav class="text-sm text-gray-400 hidden md:flex gap-4">
+          <a href="/" class="hover:text-indigo-400">Home</a>
+          <a href="/about.html" class="hover:text-indigo-400">About Us</a>
+          <a href="/privacy.html" class="hover:text-indigo-400">Privacy Policy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-4xl mx-auto p-6">
+      <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-lg">
+        <h1 class="text-3xl font-bold text-indigo-400">Contact Us</h1>
+        <p class="mt-3 text-gray-300">Have a question, partnership request, or need support? Fill the form below or use one of the alternative contact options.</p>
+
+        <form id="contactForm" class="mt-6 grid grid-cols-1 gap-4" onsubmit="handleContact(event)">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input name="name" required placeholder="Full name" class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none" />
+            <input name="email" type="email" required placeholder="Email address" class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none" />
+          </div>
+
+          <input name="subject" placeholder="Subject (optional)" class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none" />
+
+          <textarea name="message" required rows="6" placeholder="Your message" class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none"></textarea>
+
+          <label class="inline-flex items-center gap-3 text-sm text-gray-400">
+            <input type="checkbox" name="subscribe" class="rounded text-indigo-500 focus:ring-0" />
+            <span>Subscribe to market reports & email updates</span>
+          </label>
+
+          <div class="flex items-center gap-4">
+            <button type="submit" class="px-6 py-3 rounded-xl bg-indigo-600 font-semibold hover:bg-indigo-500 transition">Send Message</button>
+            <button type="reset" class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:bg-gray-700">Reset</button>
+          </div>
+
+          <div id="contactResult" class="mt-2 text-sm text-green-400"></div>
+        </form>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold text-lg">Support</h3>
+            <p class="mt-2 text-gray-300">Email: <a href="mailto:help@orbexifx.xyz" class="text-indigo-400">help@orbexifx.xyz</a></p>
+            <p class="mt-1 text-gray-300">Telegram: <a href="https://t.me/orbexifx" target="_blank" class="text-indigo-400">@orbexifx</a></p>
+            <p class="mt-1 text-gray-300">WhatsApp: <a href="https://wa.me/447848159916" target="_blank" class="text-indigo-400">+44 7848 159916</a></p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-lg">Business & Partnerships</h3>
+            <p class="mt-2 text-gray-300">For media, partnerships, or affiliate enquiries, please email <a href="mailto:help@orbexifx.xyz" class="text-indigo-400">help@orbexifx.xyz</a> with details and a contact person.</p>
+            <p class="mt-4 text-sm text-gray-500">Office hours: Mon–Fri, 09:00–18:00 (UTC+0). We aim to respond within 24–48 business hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="border-t border-gray-800 mt-12 py-8 bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6 text-sm text-gray-400">© <span id="year-contact"></span> Orbexifx. All rights reserved.</div>
+    </footer>
+
+    <script>
+      document.getElementById('year-contact').textContent = new Date().getFullYear();
+      function handleContact(e){
+        e.preventDefault();
+        // This is a UI-only demo handler. To actually send messages, wire this to a server endpoint or use a service like Formspree, Netlify Forms, or your backend.
+        const f = new FormData(document.getElementById('contactForm'));
+        const name = f.get('name');
+        const email = f.get('email');
+        document.getElementById('contactResult').textContent = `Thanks ${name || ''}! We'll reply to ${email} soon.`;
+        document.getElementById('contactForm').reset();
+      }
+    </script>
+  </body>
+</html>
