@@ -3,14 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Privacy Policy — Orbexifx</title>
+    <title>Orbexifx — Updated</title>
+    <!-- Tailwind CDN for quick styling (replace with your build in production) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0f1724;color:#e6eef8}</style>
+    <style>
+      /* Small, optional tweaks to ensure the footer looks good even without a full Tailwind build */
+      body { background: #0f1724; color: #e6eef8; }
+      .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+      .card-img-wrap { transition: transform 0.45s ease; }
+      article:hover .card-img-wrap img { transform: scale(1.06); }
+    </style>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="py-6 px-6 border-b border-gray-800">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3"><img src="/250.png" alt="Orbexifx" class="w-10 h-10 object-contain"><div class="font-bold">Orbexifx</div></a>
+  <body class="min-h-screen flex flex-col bg-gray-900 text-gray-100 antialiased leading-relaxed">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent border-b border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain">
+          <div>
+            <div class="font-bold text-xl">Orbexifx</div>
+            <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
+          <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
+          <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition">Analysis</a>
+          <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
+          <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
+          <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -50,10 +77,47 @@
       </article>
     </main>
 
-    <footer class="border-t border-gray-800 mt-12 py-8 bg-gray-900">
-      <div class="max-w-6xl mx-auto px-6 text-sm text-gray-400">© <span id="year-privacy"></span> Orbexifx. All rights reserved.</div>
-    </footer>
+    <footer class="border-t border-gray-800 mt-12 py-10 bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-start">
+        <!-- Column 1: Brand -->
+        <div class="flex items-center gap-3">
+          <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain opacity-80">
+          <div>
+            <div class="font-bold text-lg">Orbexifx</div>
+            <div class="text-sm text-gray-500">© <span id="year"></span> Orbexifx. All rights reserved.</div>
+          </div>
+        </div>
 
-    <script>document.getElementById('year-privacy').textContent = new Date().getFullYear();</script>
+        <!-- Column 2: Footer menu (Privacy / Terms / AML) -->
+        <div class="text-sm text-gray-300 flex flex-col items-center space-y-2">
+          <div class="font-semibold text-gray-200 mb-1">Important</div>
+          <nav class="flex flex-col md:flex-row gap-3 md:gap-6">
+            <a href="/privacy.html" class="hover:text-indigo-400 transition">Privacy Policy</a>
+            <a href="/terms.html" class="hover:text-indigo-400 transition">Terms &amp; Condition</a>
+            <a href="/aml.html" class="hover:text-indigo-400 transition">AML Policy</a>
+          </nav>
+          <div class="mt-3 text-xs text-gray-500">These pages explain how we handle data, responsible use, and compliance.</div>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="text-sm text-gray-500 text-right">
+          <p>Email: <a href="mailto:help@orbexifx.xyz" class="text-indigo-400 hover:text-white">help@orbexifx.xyz</a></p>
+          <p>Telegram: <a href="https://t.me/orbexifx" target="_blank" rel="noopener" class="text-indigo-400 hover:text-white">@orbexifx</a></p>
+          <div class="mt-3 flex justify-end gap-3">
+            <a href="https://facebook.com/orbexifx" target="_blank" class="text-xs px-3 py-2 bg-blue-700/10 rounded">Facebook</a>
+            <a href="https://instagram.com/orbexifx" target="_blank" class="text-xs px-3 py-2 bg-pink-600/10 rounded">Instagram</a>
+          </div>
+           </footer>
+
+    <!-- Subtle hidden warning placed at page edge (only one place) -->
+    <div class="fixed bottom-2 right-2 text-xs text-gray-500 opacity-70 pointer-events-none select-none">
+      Warning: Signals are educational only — not financial advice. Trading involves risk.
+    </div>
+
+    <script>
+      // small interactivity
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('menuBtn').addEventListener('click', ()=> alert('Mobile menu: you can implement a slide-over here.'));
+      function handleSignup(e){ e.preventDefault(); const f = new FormData(e.target); const name = f.get('name'); const email = f.get('email'); document.getElementById('msg').textContent = `Thanks ${name || ''}! Check ${email} for next steps.`; }
+    </script>
   </body>
-</html>
