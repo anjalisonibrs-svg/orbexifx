@@ -3,14 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Terms & Condition — Orbexifx</title>
+    <title>Orbexifx — Updated</title>
+    <!-- Tailwind CDN for quick styling (replace with your build in production) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body{background:#0f1724;color:#e6eef8}</style>
+    <style>
+      /* Small, optional tweaks to ensure the footer looks good even without a full Tailwind build */
+      body { background: #0f1724; color: #e6eef8; }
+      .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+      .card-img-wrap { transition: transform 0.45s ease; }
+      article:hover .card-img-wrap img { transform: scale(1.06); }
+    </style>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="py-6 px-6 border-b border-gray-800">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3"><img src="/250.png" alt="Orbexifx" class="w-10 h-10 object-contain"><div class="font-bold">Orbexifx</div></a>
+  <body class="min-h-screen flex flex-col bg-gray-900 text-gray-100 antialiased leading-relaxed">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent border-b border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="250.png" alt="Orbexifx Logo" class="w-10 h-10 object-contain">
+          <div>
+            <div class="font-bold text-xl">Orbexifx</div>
+            <div class="text-xs text-indigo-400 font-medium tracking-widest uppercase">Trade Smarter</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="text-gray-300 hover:text-indigo-400 transition">Features</a>
+          <a href="#signals" class="text-gray-300 hover:text-indigo-400 transition">Signals</a>
+          <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition">Analysis</a>
+          <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
+          <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
+          <a href="#" class="ml-4 px-5 py-2 rounded-lg bg-indigo-600 font-semibold hover:bg-indigo-500 transition shadow-lg">Get Started</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menuBtn" aria-label="menu" class="p-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-500">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -87,3 +114,4 @@
     </script>
   </body>
 </html>
+
