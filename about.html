@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us — Orbexifx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>body{background:#0f1724;color:#e6eef8}</style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="py-6 px-6 border-b border-gray-800">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/250.png" alt="Orbexifx" class="w-10 h-10 object-contain">
+          <div class="font-bold">Orbexifx</div>
+        </a>
+        <nav class="text-sm text-gray-400 hidden md:flex gap-4">
+          <a href="/" class="hover:text-indigo-400">Home</a>
+          <a href="/signals.html" class="hover:text-indigo-400">Signals</a>
+          <a href="/contact.html" class="hover:text-indigo-400">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-6xl mx-auto p-6">
+      <article class="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-lg">
+        <h1 class="text-3xl font-bold text-indigo-400">About Orbexifx</h1>
+        <p class="mt-4 text-gray-300">Orbexifx is a trading education and signal service focused on helping traders build consistent, risk-aware strategies for the forex and CFD markets. Our work is guided by three core principles: <strong>Discipline</strong>, <strong>Clarity</strong>, and <strong>Risk Control</strong>. We create clear, repeatable trading routines so members can execute with confidence and avoid impulsive decisions.</p>
+
+        <h2 class="mt-6 text-2xl font-semibold">Our Mission</h2>
+        <p class="mt-2 text-gray-300">To empower traders with concise market research, practical trade signals, and learning resources that emphasise long-term consistency and sound risk management.</p>
+
+        <h2 class="mt-6 text-2xl font-semibold">What We Offer</h2>
+        <ul class="mt-2 list-disc list-inside text-gray-300 space-y-2">
+          <li>Actionable trade signals with clear entry, target, and stop guidelines.</li>
+          <li>Daily market analysis and educational content to improve trader decision-making.</li>
+          <li>Community support via Telegram and social channels for real-time discussion.</li>
+        </ul>
+
+        <h2 class="mt-6 text-2xl font-semibold">Our Commitment</h2>
+        <p class="mt-2 text-gray-300">We prioritise transparency: every signal includes rationale and risk parameters. We never promise guaranteed profits — trading involves risk — but we commit to providing tools and guidance to improve the probability of consistent outcomes.</p>
+
+        <div class="mt-6 text-sm text-gray-500">Contact us at <a href="mailto:help@orbexifx.xyz" class="text-indigo-400">help@orbexifx.xyz</a> for partnerships, media, or support.</div>
+      </article>
+    </main>
+
+    <footer class="border-t border-gray-800 mt-12 py-8 bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6 text-sm text-gray-400">© <span id="year-about"></span> Orbexifx. All rights reserved.</div>
+    </footer>
+
+    <script>document.getElementById('year-about').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
